@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'patient_model.dart';
+part of 'employee_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator

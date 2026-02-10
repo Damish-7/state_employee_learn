@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:state_employee_learn/db/model/patient_model.dart';
+import 'package:state_employee_learn/db/model/employee_model.dart';
 import 'package:state_employee_learn/screens/home_screen.dart';
 
 Future<void> main() async {

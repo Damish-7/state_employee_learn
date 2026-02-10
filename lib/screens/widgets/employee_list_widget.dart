@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:state_employee_learn/db/controller/employee_controller.dart';
-import 'package:state_employee_learn/db/model/patient_model.dart';
+import 'package:state_employee_learn/db/model/employee_model.dart';
 
 
 class EmployeeListWidget extends StatelessWidget {

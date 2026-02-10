@@ -1,5 +1,5 @@
 import 'package:hive_flutter/adapters.dart';
-part 'patient_model.g.dart';
+part 'employee_model.g.dart';
 
 @HiveType(typeId: 1)
 class EmployeeModel{

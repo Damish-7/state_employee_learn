@@ -16,6 +16,23 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           AddEmployeeWidget(),
+
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'search employee',
+                suffixIcon: const Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                )
+              ),
+              onChanged: (value)  {
+                controller.searchQuery.value = value;
+              },
+            ),
+            ),
+            
           Expanded(child: EmployeeListWidget()),
         ],
       ),
