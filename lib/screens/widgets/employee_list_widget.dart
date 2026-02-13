@@ -11,38 +11,39 @@ class EmployeeListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(()  {
-      if (controller.employeeList.isEmpty){
-        return const Center(child: Text('No employee found'));
-      } 
+   return Obx(() {
+  final employees = controller.filtereedEmployees;
 
-      return ListView.builder(
-        itemCount: controller.employeeList.length,
-        itemBuilder: (_, index){
-          final employee = controller.employeeList[index];
+  if (employees.isEmpty) {
+    return const Center(child: Text('No employee found'));
+  }
 
-          return ListTile(
-            title: Text(employee.name),
-            subtitle: Text('${employee.department} - ${employee.phone}'),
+  return ListView.builder(
+    itemCount: employees.length,
+    itemBuilder: (_, index) {
+      final employee = employees[index];
 
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.edit),
-                  onPressed: () => _editEmployee(context, employee),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.delete),
-                  onPressed: () => controller.deleteEmployee(employee.id == null ? 0 : employee.id!),
-                ),
-              ],
+      return ListTile(
+        title: Text(employee.name),
+        subtitle: Text('${employee.department} - ${employee.phone}'),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.edit),
+              onPressed: () => _editEmployee(context, employee),
             ),
-          );
-        },
-        );
+            IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: () => controller.deleteEmployee(employee.id!),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+});
 
-    });
   }
 
   void _editEmployee(BuildContext context, EmployeeModel employees){
